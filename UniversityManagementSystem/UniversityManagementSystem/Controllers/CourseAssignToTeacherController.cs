@@ -15,6 +15,8 @@ namespace UniversityManagementSystem.Controllers
     {
         private UniversityDbContext db = new UniversityDbContext();
         private TeacherManager teacherManager=new TeacherManager();
+
+        private DepartmentManager departmentManager=new DepartmentManager();
         // GET: /CourseAssignToTeacher/
         public ActionResult Index()
         {
@@ -41,7 +43,7 @@ namespace UniversityManagementSystem.Controllers
         public ActionResult Create()
         {
             ViewBag.CourseId = new SelectList(db.Courses, "Id", "CourseCode");
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName");
+            ViewBag.DepartmentId = departmentManager.GetAllDepartments(); 
             ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "TeacherName");
             return View();
         }
@@ -139,11 +141,21 @@ namespace UniversityManagementSystem.Controllers
         }
 
 
-        public PartialViewResult TeacherCreadit(int Id)
-        {
+        //public PartialViewResult TeacherCreadit(int Id)
+        //{
 
-            ViewBag.TeacherCredit = teacherManager.GetTeacherCredit(Id);
-            return PartialView();
+        //    ViewBag.TeacherCredit = teacherManager.GetTeacherCredit(Id);
+        //    return PartialView();
+        //}
+
+        public JsonResult GetTeacherByDepartmentId(int teacherId)
+        {
+            var teacherList = teacherManager.GetTeacherByDepartmentId(teacherId);
+            return Json(teacherList, JsonRequestBehavior.AllowGet);
         }
+
+        
+
+        
     }
 }
