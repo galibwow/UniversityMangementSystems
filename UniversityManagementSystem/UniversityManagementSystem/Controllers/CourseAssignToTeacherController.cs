@@ -14,9 +14,11 @@ namespace UniversityManagementSystem.Controllers
     public class CourseAssignToTeacherController : Controller
     {
         private UniversityDbContext db = new UniversityDbContext();
-        private TeacherManager teacherManager=new TeacherManager();
+        private TeacherManager teacherManager = new TeacherManager();
 
-        private DepartmentManager departmentManager=new DepartmentManager();
+        private CourseManager courseManager = new CourseManager();
+
+        private DepartmentManager departmentManager = new DepartmentManager();
         // GET: /CourseAssignToTeacher/
         public ActionResult Index()
         {
@@ -24,39 +26,27 @@ namespace UniversityManagementSystem.Controllers
             return View(courseassigntoteachers.ToList());
         }
 
-        // GET: /CourseAssignToTeacher/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CourseAssignToTeacher courseassigntoteacher = db.CourseAssignToTeachers.Find(id);
-            if (courseassigntoteacher == null)
-            {
-                return HttpNotFound();
-            }
-            return View(courseassigntoteacher);
-        }
+
 
         // GET: /CourseAssignToTeacher/Create
         public ActionResult Create()
         {
-            ViewBag.CourseId = new SelectList(db.Courses, "Id", "CourseCode");
-            ViewBag.DepartmentId = departmentManager.GetAllDepartments(); 
+
+            //ViewBag.CourseId = new SelectList(db.Courses, "Id", "CourseCode");
+            ViewBag.DepartmentId = departmentManager.GetAllDepartments();
             ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "TeacherName");
             return View();
         }
 
-        // POST: /CourseAssignToTeacher/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,DepartmentId,CourseId,TeacherId,CourseAssign")] CourseAssignToTeacher courseassigntoteacher)
+        public ActionResult Create([Bind(Include = "Id,DepartmentId,CourseId,TeacherId,CourseAssign")] CourseAssignToTeacher courseassigntoteacher)
         {
             if (ModelState.IsValid)
             {
+
+
                 db.CourseAssignToTeachers.Add(courseassigntoteacher);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,67 +59,6 @@ namespace UniversityManagementSystem.Controllers
         }
 
         // GET: /CourseAssignToTeacher/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CourseAssignToTeacher courseassigntoteacher = db.CourseAssignToTeachers.Find(id);
-            if (courseassigntoteacher == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.CourseId = new SelectList(db.Courses, "Id", "CourseCode", courseassigntoteacher.CourseId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", courseassigntoteacher.DepartmentId);
-            ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "TeacherName", courseassigntoteacher.TeacherId);
-            return View(courseassigntoteacher);
-        }
-
-        // POST: /CourseAssignToTeacher/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,DepartmentId,CourseId,TeacherId,CourseAssign")] CourseAssignToTeacher courseassigntoteacher)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(courseassigntoteacher).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.CourseId = new SelectList(db.Courses, "Id", "CourseCode", courseassigntoteacher.CourseId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", courseassigntoteacher.DepartmentId);
-            ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "TeacherName", courseassigntoteacher.TeacherId);
-            return View(courseassigntoteacher);
-        }
-
-        // GET: /CourseAssignToTeacher/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CourseAssignToTeacher courseassigntoteacher = db.CourseAssignToTeachers.Find(id);
-            if (courseassigntoteacher == null)
-            {
-                return HttpNotFound();
-            }
-            return View(courseassigntoteacher);
-        }
-
-        // POST: /CourseAssignToTeacher/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            CourseAssignToTeacher courseassigntoteacher = db.CourseAssignToTeachers.Find(id);
-            db.CourseAssignToTeachers.Remove(courseassigntoteacher);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
 
         protected override void Dispose(bool disposing)
         {
@@ -154,8 +83,38 @@ namespace UniversityManagementSystem.Controllers
             return Json(teacherList, JsonRequestBehavior.AllowGet);
         }
 
-        
 
-        
+        public JsonResult GetCourseByCourseId(int courseId)
+        {
+            var courses = courseManager.GetCourseByCourseId(courseId);
+            return Json(courses, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public JsonResult GetTeacherByTeacherId(int teacherId)
+        {
+            var teacher = teacherManager.GetTeacherByTeacherId(teacherId);
+            return Json(teacher, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public JsonResult GetCourseByDepartmentId(int departmentId)
+        {
+            var course = courseManager.GetCourseByDepartmentId(departmentId);
+
+            return Json(course, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        public Decimal CalculateCredit(int tId, int cId)
+        {
+            Teacher teacher = teacherManager.GetTeacherByTeacherId(tId);
+            Course course = courseManager.GetCourseByCourseId(cId);
+            decimal remaining = 0;
+            remaining += teacher.CreditToBeTaken - course.Credit;
+            return remaining;
+        }
+
     }
 }

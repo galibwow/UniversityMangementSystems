@@ -7,21 +7,21 @@ using UniversityManagementSystem.Models;
 
 namespace UniversityManagementSystem.DAL
 {
-    public class TeacherGateway:CommonGateway
+    public class TeacherGateway : CommonGateway
     {
-        
+
         public Teacher GetTeacherCredit(int Id)
         {
-        SqlConnection connectionString=new SqlConnection(ConnectionString);
-        string quary = "Select CreditToBeTaken from Teacher Where Id='" + Id + "'";
+            SqlConnection connectionString = new SqlConnection(ConnectionString);
+            string quary = "Select CreditToBeTaken from Teacher Where Id='" + Id + "'";
 
-        connectionString.Open();
-            SqlCommand command=new SqlCommand(quary,connectionString);
+            connectionString.Open();
+            SqlCommand command = new SqlCommand(quary, connectionString);
 
             SqlDataReader reader = command.ExecuteReader();
-            Teacher teachers=new Teacher();
-            
-            
+            Teacher teachers = new Teacher();
+
+
             while (reader.Read())
             {
                 teachers.CreditToBeTaken = Convert.ToDecimal(reader["CreditToBeTaken"]);
@@ -35,33 +35,69 @@ namespace UniversityManagementSystem.DAL
 
         public List<Teacher> GetTeacherByDepartmentId(int Id)
         {
-            SqlConnection connection=new SqlConnection(ConnectionString);
+            SqlConnection connection = new SqlConnection(ConnectionString);
 
             string quary = "Select * from Teacher Where DepartmentId='" + Id + "'";
             SqlCommand command = new SqlCommand(quary, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
-    
-           
-           List<Teacher>teacherList=new List<Teacher>();
-            
+
+
+            List<Teacher> teacherList = new List<Teacher>();
+
             if (reader.HasRows)
             {
                 while (reader.Read())
-                { Teacher teachers=new Teacher();
-                    
+                {
+                    Teacher teachers = new Teacher();
+
                     teachers.Id = Convert.ToInt32(reader["Id"].ToString());
                     teachers.TeacherName = reader["TeacherName"].ToString();
-                    
 
 
-                    
+
+
                     teacherList.Add(teachers);
 
                 }
                 reader.Close();
             }
             return teacherList;
+
+        }
+
+
+        public Teacher GetTeacherByTeacherId(int Id)
+        {
+            SqlConnection connection = new SqlConnection(ConnectionString);
+
+            string quary = "Select * from Teacher Where Id='" + Id + "'";
+            SqlCommand command = new SqlCommand(quary, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            Teacher teacher = new Teacher();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+
+
+                    teacher.Id = Convert.ToInt32(reader["Id"].ToString());
+                    teacher.TeacherName = reader["TeacherName"].ToString();
+                    teacher.CreditToBeTaken = Convert.ToDecimal(reader["CreditToBeTaken"]);
+
+
+
+
+
+
+                }
+                reader.Close();
+            }
+            return teacher;
 
         }
     }

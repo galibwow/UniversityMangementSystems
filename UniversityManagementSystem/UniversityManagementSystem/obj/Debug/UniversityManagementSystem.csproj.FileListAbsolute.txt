@@ -32,3 +32,37 @@ C:\Users\Galib\documents\visual studio 2013\Projects\UniversityManagementSystem\
 C:\Users\Galib\documents\visual studio 2013\Projects\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.csproj.GenerateResource.Cache
 C:\Users\Galib\documents\visual studio 2013\Projects\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.Migrations.init1.resources
 C:\Users\Galib\documents\visual studio 2013\Projects\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.Migrations.init2.resources
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.csprojResolveAssemblyReference.cache
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.Migrations.init.resources
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.Migrations.init1.resources
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.Migrations.init2.resources
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.csproj.GenerateResource.Cache
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\obj\Debug\UniversityManagementSystem.pdb
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\UniversityManagementSystem.dll.config
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\UniversityManagementSystem.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\UniversityManagementSystem.pdb
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\Antlr3.Runtime.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\EntityFramework.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\EntityFramework.SqlServer.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\Newtonsoft.Json.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Helpers.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Mvc.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Optimization.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Razor.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.WebPages.Deployment.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.WebPages.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.WebPages.Razor.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\WebGrease.dll
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\EntityFramework.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\EntityFramework.SqlServer.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\Newtonsoft.Json.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Helpers.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Mvc.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Optimization.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.Razor.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.WebPages.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.WebPages.Deployment.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\System.Web.WebPages.Razor.xml
+D:\Office\Projects\University\UniversityManagementSystem\UniversityManagementSystem\bin\Antlr3.Runtime.pdb

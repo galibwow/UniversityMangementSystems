@@ -121,6 +121,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\CourseManager.cs" />
     <Compile Include="BLL\DepartmentManager.cs" />
     <Compile Include="BLL\TeacherManager.cs" />
     <Compile Include="Controllers\CourseAssignToTeacherController.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="DAL\CommonGateway.cs" />
+    <Compile Include="DAL\CourseAssignToTeacherGateway.cs" />
     <Compile Include="DAL\CourseGateway.cs" />
     <Compile Include="DAL\DepartmentGateway.cs" />
     <Compile Include="DAL\TeacherGateway.cs" />
@@ -155,6 +157,7 @@
     <Compile Include="Models\Semesters.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\UniversityDbContext.cs" />
+    <Compile Include="Models\ViewModel\CourseStatics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +221,7 @@
     <Content Include="Views\CourseAssignToTeacher\_CreditToBeTaken.cshtml" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Views\CourseAssignToTeacher\CreditToBeTaken.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

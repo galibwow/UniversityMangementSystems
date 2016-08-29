@@ -10,7 +10,7 @@ namespace UniversityManagementSystem.BLL
     public class TeacherManager
     {
 
-        TeacherGateway teacherGateway=new TeacherGateway();
+        TeacherGateway teacherGateway = new TeacherGateway();
 
         public Teacher GetTeacherCredit(int Id)
         {
@@ -20,6 +20,12 @@ namespace UniversityManagementSystem.BLL
         public List<Teacher> GetTeacherByDepartmentId(int Id)
         {
             return teacherGateway.GetTeacherByDepartmentId(Id);
+        }
+
+
+        public Teacher GetTeacherByTeacherId(int Id)
+        {
+            return teacherGateway.GetTeacherByTeacherId(Id);
         }
     }
 }

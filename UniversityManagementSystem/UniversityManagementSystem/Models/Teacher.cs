@@ -31,7 +31,7 @@ namespace UniversityManagementSystem.Models
         [DisplayName("Credit To Be Taken")]
         public decimal CreditToBeTaken { get; set; }
 
-
+        public decimal RemainingCredit { get; set; }
         public virtual ICollection<CourseAssignToTeacher> CourseAssignToTeacher { get; set; } 
     }
 }
